@@ -1,0 +1,6 @@
+framework module Pods_KidCalc {
+  umbrella header "Pods-KidCalc-umbrella.h"
+
+  export *
+  module * { export * }
+}
