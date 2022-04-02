@@ -84,9 +84,16 @@ class ViewController: UIViewController {
         if validInput() {
             print("OPERATIONS ", operations)
             let expression = NSExpression(format: operations)
-            let result = expression.expressionValue(with: nil, context: nil) as! Double
-            let resultString = formatResult(result: result)
-            calculatorResult.text = resultString
+            if let result = expression.expressionValue(with: nil, context: nil) as? Double {
+                let resultString = formatResult(result: result)
+                calculatorResult.text = resultString
+            } else {
+                let alert = UIAlertController(title: "Invalid input", message: "Calculator does not understand the input", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
         } else {
             let alert = UIAlertController(title: "Invalid input", message: "Calculator does not understand the input", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -104,6 +111,10 @@ class ViewController: UIViewController {
     {
         var count = 0
         var funcCharIndexes = [Int]()
+        
+        if operations.contains("/0") { // Division by zero case
+            return false
+        }
         
         for char in operations
         {
@@ -162,11 +173,7 @@ class ViewController: UIViewController {
     }
     
     func formatResult(result: Double) -> String {
-        if(result.truncatingRemainder(dividingBy: 1) == 0) {
-            return String(format: "%.0f", result)
-        } else {
-            return String(format: "%.2f", result)
-        }
+        return String(format: "%.0f", result)
     }
     
     @IBAction func divisionClicked(_ sender: Any) {
