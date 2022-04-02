@@ -13,6 +13,7 @@
 		6333588727F88AEA00623F76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333588527F88AEA00623F76 /* Main.storyboard */; };
 		6333588927F88AEC00623F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6333588827F88AEC00623F76 /* Assets.xcassets */; };
 		6333588C27F88AEC00623F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333588A27F88AEC00623F76 /* LaunchScreen.storyboard */; };
+		B68C7120E2489786A1595E51 /* Pods_KidCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0E72776AC692D1026F4358 /* Pods_KidCalc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		6333588827F88AEC00623F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6333588B27F88AEC00623F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6333588D27F88AEC00623F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84648B8B7AC9AE71B75D010F /* Pods-KidCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidCalc.debug.xcconfig"; path = "Target Support Files/Pods-KidCalc/Pods-KidCalc.debug.xcconfig"; sourceTree = "<group>"; };
+		9D0E72776AC692D1026F4358 /* Pods_KidCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A459C91ADA28CE4E79C8A436 /* Pods-KidCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidCalc.release.xcconfig"; path = "Target Support Files/Pods-KidCalc/Pods-KidCalc.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68C7120E2489786A1595E51 /* Pods_KidCalc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				6333587E27F88AEA00623F76 /* KidCalc */,
 				6333587D27F88AEA00623F76 /* Products */,
+				7E5A5B0E36B4B92929B1CB7C /* Pods */,
+				ECF606B0F9C46362415AA982 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = KidCalc;
 			sourceTree = "<group>";
 		};
+		7E5A5B0E36B4B92929B1CB7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84648B8B7AC9AE71B75D010F /* Pods-KidCalc.debug.xcconfig */,
+				A459C91ADA28CE4E79C8A436 /* Pods-KidCalc.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ECF606B0F9C46362415AA982 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D0E72776AC692D1026F4358 /* Pods_KidCalc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6333589027F88AEC00623F76 /* Build configuration list for PBXNativeTarget "KidCalc" */;
 			buildPhases = (
+				AE9AC53B5C38805630D313F2 /* [CP] Check Pods Manifest.lock */,
 				6333587827F88AEA00623F76 /* Sources */,
 				6333587927F88AEA00623F76 /* Frameworks */,
 				6333587A27F88AEA00623F76 /* Resources */,
+				2A7905DD73BA33AE0B09826B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A7905DD73BA33AE0B09826B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KidCalc/Pods-KidCalc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KidCalc/Pods-KidCalc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidCalc/Pods-KidCalc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9AC53B5C38805630D313F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KidCalc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6333587827F88AEA00623F76 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		6333589127F88AEC00623F76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84648B8B7AC9AE71B75D010F /* Pods-KidCalc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		6333589227F88AEC00623F76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A459C91ADA28CE4E79C8A436 /* Pods-KidCalc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

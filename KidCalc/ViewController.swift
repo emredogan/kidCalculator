@@ -7,9 +7,12 @@
 
 import UIKit
 import AVFoundation
+import SCLAlertView
 
 
 class ViewController: UIViewController {
+    
+    
     var audioPlayer: AVAudioPlayer!
 
     
@@ -22,11 +25,28 @@ class ViewController: UIViewController {
     
     @IBOutlet var mainView: UIView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        let animation: CATransition = CATransition()
+        animation.duration = 1.0
+        animation.type = CATransitionType.fade
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        calculatorOperations.layer.add(animation, forKey: "changeTextTransition")
+        
+        let animation2: CATransition = CATransition()
+        animation2.duration = 1.0
+        animation2.type = CATransitionType.fade
+        animation2.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        calculatorResult.layer.add(animation2, forKey: "changeTextTransition")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupImageTypeForButtons()
+       
+    
+
         
         
     }
@@ -88,16 +108,12 @@ class ViewController: UIViewController {
                 let resultString = formatResult(result: result)
                 calculatorResult.text = resultString
             } else {
-                let alert = UIAlertController(title: "Invalid input", message: "Calculator does not understand the input", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                customAlert()
             }
             
             
         } else {
-            let alert = UIAlertController(title: "Invalid input", message: "Calculator does not understand the input", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            customAlert()
         }
         
         
@@ -113,6 +129,10 @@ class ViewController: UIViewController {
         var funcCharIndexes = [Int]()
         
         if operations.contains("/0") { // Division by zero case
+            return false
+        }
+        
+        if operations == "" {
             return false
         }
         
@@ -196,9 +216,13 @@ class ViewController: UIViewController {
     }
     
     func clearAll() {
+        calculatorOperations.fadeTransition(0.5)
+        calculatorResult.fadeTransition(0.5)
         operations = ""
         calculatorResult.text = ""
         calculatorOperations.text = ""
+        
+        
     }
     
     func addToOperations(value: String) {
@@ -220,7 +244,12 @@ class ViewController: UIViewController {
     
     @objc func animate(button: UIButton) {
         button.shake(duration: 0.5, values: [-12.0, 12.0, -12.0, 12.0, -6.0, 6.0, -3.0, 3.0, 10.0])
-        playAudioAsset("button_sound")
+        if(button.tag == 1) { // Erase
+            playAudioAsset("eraser_sound")
+            
+        } else {
+            playAudioAsset("button_sound")
+        }
         
         
     }
@@ -238,11 +267,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func customAlert() {
+        SCLAlertView().showError("Problem!", subTitle: "You entered an invalid input or the number is too big for me to calculate :)") // Error
+    }
+    
     
 }
 
 extension UIView {
     
+    func fadeTransition(_ duration:CFTimeInterval) {
+            let animation = CATransition()
+            animation.timingFunction = CAMediaTimingFunction(name:
+                CAMediaTimingFunctionName.easeInEaseOut)
+            animation.type = CATransitionType.fade
+            animation.duration = duration
+            layer.add(animation, forKey: CATransitionType.fade.rawValue)
+        }
     
     // Using CAMediaTimingFunction
     func shake(duration: TimeInterval = 0.5, values: [CGFloat]) {
