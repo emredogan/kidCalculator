@@ -12,16 +12,14 @@ import SCLAlertView
 
 class ViewController: UIViewController {
     
-    
-    var audioPlayer: AVAudioPlayer!
-    
     var calcLogic: CalculationLogic = CalculationLogic()
-
-    
-    @IBOutlet var imageButtons: [UIButton]!
-    
+    var helper: Helper = Helper()
     var operations: String = ""
     
+    let preferencesInfoText = "info_text_shown"
+    
+    
+    @IBOutlet var imageButtons: [UIButton]!
     @IBOutlet weak var calculatorOperations: UILabel!
     @IBOutlet weak var calculatorResult: UILabel!
     
@@ -33,68 +31,30 @@ class ViewController: UIViewController {
         setupAnimations()
     }
     
-    @IBAction func oneClicked(_ sender: Any) {
-        addToOperations(value: "1")
+    override func viewDidAppear(_ animated: Bool) {
+        if Helper.readFromPreferences(key: preferencesInfoText) == nil{
+            helper.customInfo(header: "Warning", subtitle: "This is a simplified calculator for kids, therefore ignores the decimals.")
+            Helper.writeToPreferences(key: preferencesInfoText, value: true)
+        }
     }
     
-    @IBAction func twoClicked(_ sender: Any) {
-        addToOperations(value: "2")
-        
-    }
-    
-    @IBAction func threeClicked(_ sender: Any) {
-        addToOperations(value: "3")
-        
-    }
-    
-    @IBAction func fourClicked(_ sender: Any) {
-        addToOperations(value: "4")
-        
-    }
-    
-    @IBAction func fiveClicked(_ sender: Any) {
-        addToOperations(value: "5")
-        
-    }
-    
-    @IBAction func sixClicked(_ sender: Any) {
-        addToOperations(value: "6")
-        
-    }
-    
-    @IBAction func sevenClicked(_ sender: Any) {
-        addToOperations(value: "7")
-        
-    }
-    
-    @IBAction func eightClicked(_ sender: Any) {
-        addToOperations(value: "8")
-        
-    }
-    
-    @IBAction func nineClicked(_ sender: Any) {
-        addToOperations(value: "9")
-        
-    }
-    
-    @IBAction func zeroClicked(_ sender: Any) {
-        addToOperations(value: "0")
-        
+    @IBAction func numberClicked(_ sender: UIButton) {
+        addToOperations(value: String(sender.tag))
     }
     
     @IBAction func equalClicked(_ sender: Any) {
         if let result = calcLogic.calculate(operations: operations) {
             calculatorResult.text = result
         } else {
-            customAlert()
+            helper.customAlert(header: "Problem", subtitle: "You entered an invalid input or the number is too big for me to calculate :)")
         }
     }
     
     @IBAction func eraseClicked(_ sender: Any) {
         clearAll()
     }
-
-
+    
+    
     @IBAction func divisionClicked(_ sender: Any) {
         addToOperations(value: "/")
         
@@ -134,36 +94,19 @@ class ViewController: UIViewController {
             button.imageView?.contentMode = .scaleAspectFit
             button.addTarget(self, action: #selector(animate), for: .touchUpInside)
         }
-    
+        
     }
     
     @objc func animate(button: UIButton) {
         button.shake(duration: 0.5, values: [-12.0, 12.0, -12.0, 12.0, -6.0, 6.0, -3.0, 3.0, 10.0])
-        if(button.tag == 1) { // Erase
-            playAudioAsset("eraser_sound")
+        if(button.tag == 10) { // Erase
+            helper.playAudioAsset("eraser_sound")
             
         } else {
-            playAudioAsset("button_sound")
+            helper.playAudioAsset("button_sound")
         }
         
         
-    }
-    
-    func playAudioAsset(_ assetName : String) {
-          guard let audioData = NSDataAsset(name: assetName)?.data else {
-             fatalError("Unable to find asset \(assetName)")
-          }
-
-          do {
-             audioPlayer = try AVAudioPlayer(data: audioData)
-             audioPlayer.play()
-          } catch {
-             fatalError(error.localizedDescription)
-        }
-    }
-    
-    func customAlert() {
-        SCLAlertView().showError("Problem!", subTitle: "You entered an invalid input or the number is too big for me to calculate :)") // Error
     }
     
     private func setupAnimations() {

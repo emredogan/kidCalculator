@@ -49,28 +49,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Sj-cb-HDa">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="168"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wo-Xb-YKR">
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wo-Xb-YKR">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="1"/>
                                                 <connections>
-                                                    <action selector="oneClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9sy-HV-0QA"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rx1-rB-L8t"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8k-gp-0cd">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8k-gp-0cd">
                                                 <rect key="frame" x="102.5" y="0.0" width="87" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="2"/>
                                                 <connections>
-                                                    <action selector="twoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAa-DL-wC3"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8iG-xn-Ay7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qq-Qh-rZ7">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qq-Qh-rZ7">
                                                 <rect key="frame" x="204.5" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="3"/>
                                                 <connections>
-                                                    <action selector="threeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7m-5x-adv"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xoJ-sM-P2d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gh-eD-2M0">
@@ -86,28 +86,28 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7T4-Eu-7Bx">
                                         <rect key="frame" x="0.0" y="168" width="394" height="168"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0F-L2-COq">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0F-L2-COq">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="4"/>
                                                 <connections>
-                                                    <action selector="fourClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9sV-yJ-bxQ"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkj-x7-TC6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0y-Zf-FFV">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0y-Zf-FFV">
                                                 <rect key="frame" x="102.5" y="0.0" width="87" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="5"/>
                                                 <connections>
-                                                    <action selector="fiveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkR-gH-zSL"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Si0-1N-1ag"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-yz-lN2">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-yz-lN2">
                                                 <rect key="frame" x="204.5" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="6"/>
                                                 <connections>
-                                                    <action selector="sixClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rN-9q-XH8"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2TT-fu-w1g"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwz-Wt-Zfx">
@@ -123,28 +123,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R8W-s9-ei5">
                                         <rect key="frame" x="0.0" y="336" width="394" height="168"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-fy-23C">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-fy-23C">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button" image="7"/>
                                                 <connections>
-                                                    <action selector="sevenClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5vd-nZ-otn"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W1h-HK-kBM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-Ty-nlP">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-Ty-nlP">
                                                 <rect key="frame" x="102.5" y="0.0" width="87" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="8"/>
                                                 <connections>
-                                                    <action selector="eightClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSe-aO-VSh"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUO-K6-BrY"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bb-5B-o9f">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bb-5B-o9f">
                                                 <rect key="frame" x="204.5" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="9"/>
                                                 <connections>
-                                                    <action selector="nineClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIJ-i6-lbh"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="06p-g8-Znm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTa-iz-SbF">
@@ -165,7 +165,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="0"/>
                                                 <connections>
-                                                    <action selector="zeroClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lU-5q-Fyy"/>
+                                                    <action selector="numberClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FyZ-Of-1rV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBV-qf-xyT">
@@ -176,7 +176,7 @@
                                                     <action selector="equalClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIr-1t-XXS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9a-Rx-PvY">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9a-Rx-PvY">
                                                 <rect key="frame" x="204.5" y="0.0" width="87.5" height="168"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="eraser"/>

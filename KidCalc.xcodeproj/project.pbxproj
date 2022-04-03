@@ -15,6 +15,7 @@
 		6333588C27F88AEC00623F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333588A27F88AEC00623F76 /* LaunchScreen.storyboard */; };
 		633358B727F9F26500623F76 /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633358B627F9F26500623F76 /* CalculationLogic.swift */; };
 		633358BD27F9F7C500623F76 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633358BC27F9F7C500623F76 /* UIViewExtension.swift */; };
+		633358C027F9FC8A00623F76 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633358BF27F9FC8900623F76 /* Helper.swift */; };
 		B68C7120E2489786A1595E51 /* Pods_KidCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0E72776AC692D1026F4358 /* Pods_KidCalc.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		6333588D27F88AEC00623F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633358B627F9F26500623F76 /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		633358BC27F9F7C500623F76 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		633358BF27F9FC8900623F76 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		84648B8B7AC9AE71B75D010F /* Pods-KidCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidCalc.debug.xcconfig"; path = "Target Support Files/Pods-KidCalc/Pods-KidCalc.debug.xcconfig"; sourceTree = "<group>"; };
 		9D0E72776AC692D1026F4358 /* Pods_KidCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A459C91ADA28CE4E79C8A436 /* Pods-KidCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidCalc.release.xcconfig"; path = "Target Support Files/Pods-KidCalc/Pods-KidCalc.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				633358B527F9F24200623F76 /* Model */,
 				633358B427F9F23000623F76 /* View */,
 				633358B327F9F22500623F76 /* Controller */,
+				633358BE27F9FC7400623F76 /* Helper */,
 				633358BB27F9F79800623F76 /* Extensions */,
 				6333588827F88AEC00623F76 /* Assets.xcassets */,
 				6333588A27F88AEC00623F76 /* LaunchScreen.storyboard */,
@@ -110,6 +113,14 @@
 				633358BC27F9F7C500623F76 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		633358BE27F9FC7400623F76 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				633358BF27F9FC8900623F76 /* Helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		7E5A5B0E36B4B92929B1CB7C /* Pods */ = {
@@ -249,6 +260,7 @@
 				6333588027F88AEA00623F76 /* AppDelegate.swift in Sources */,
 				633358B727F9F26500623F76 /* CalculationLogic.swift in Sources */,
 				6333588227F88AEA00623F76 /* SceneDelegate.swift in Sources */,
+				633358C027F9FC8A00623F76 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
