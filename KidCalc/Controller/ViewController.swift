@@ -43,11 +43,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalClicked(_ sender: Any) {
-        if let result = calcLogic.calculate(operations: operations) {
-            calculatorResult.text = result
-        } else {
-            helper.customAlert(header: "Problem", subtitle: "You entered an invalid input or the number is too big for me to calculate :)")
+        do {
+            if let result = try calcLogic.calculate(operations: operations) {
+                calculatorResult.text = result
+            }
+        } catch let mathError as ValidationError {
+            switch mathError {
+                
+            case .divisionByZero:
+                helper.customAlert(header: "Error", subtitle: "Can't divide by zero")
+            case .emptyEquation:
+                helper.customAlert(header: "Error", subtitle: "Please enter some operations")
+            case .consecutiveOperation:
+                helper.customAlert(header: "Error", subtitle: "Operation is not valid")
+            case .enterOperation:
+                helper.customAlert(header: "Error", subtitle: "Please enter an operation")
+            default:
+                helper.customAlert(header: "Problem", subtitle: "You entered an invalid input or the number is too big for me to calculate :)")
+
+            }
+            
+        } catch {
+            print(error)
         }
+        
     }
     
     @IBAction func eraseClicked(_ sender: Any) {

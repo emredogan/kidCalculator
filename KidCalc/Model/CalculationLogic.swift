@@ -12,34 +12,53 @@ struct CalculationLogic {
     
     var operations : String = ""
     
-    mutating func calculate(operations: String) -> String? {
+    mutating func calculate(operations: String) throws -> String? {
         self.operations = operations
-        if validInput() {
-            let expression = NSExpression(format: operations)
-            if let result = expression.expressionValue(with: nil, context: nil) as? Double {
-                let resultString = formatResult(result: result)
-                return resultString
-            } else {
-               return nil
+        do {
+            if try validInput() {
+                let expression = NSExpression(format: operations)
+                if let result = expression.expressionValue(with: nil, context: nil) as? Double {
+                    let resultString = formatResult(result: result)
+                    return resultString
+                }
+                
+                
             }
             
+        } catch let mathError as ValidationError {
+            switch mathError {
+                
+            case .divisionByZero:
+                throw ValidationError.divisionByZero
+            case .emptyEquation:
+                throw ValidationError.emptyEquation
+            case .consecutiveOperation:
+                throw ValidationError.consecutiveOperation
+            case .enterOperation:
+                throw ValidationError.enterOperation
+            case .defaultError:
+                throw ValidationError.defaultError
+            }
             
-        } else {
-            return nil
+        } catch {
+            print(error)
         }
+        
+        return nil
+        
     }
     
-    func validInput() ->Bool
+    func validInput() throws ->Bool
     {
         var count = 0
         var funcCharIndexes = [Int]()
         
         if operations.contains("/0") { // Division by zero case
-            return false
+            throw ValidationError.divisionByZero
         }
         
         if operations == "" {
-            return false
+            throw ValidationError.emptyEquation
         }
         
         for char in operations
@@ -57,19 +76,19 @@ struct CalculationLogic {
         {
             if(index == 0)
             {
-                return false
+                throw ValidationError.enterOperation
             }
             
             if(index == operations.count - 1)
             {
-                return false
+                throw ValidationError.consecutiveOperation
             }
             
             if (previous != -1)
             {
                 if(index - previous == 1)
                 {
-                    return false
+                    throw ValidationError.defaultError
                 }
             }
             previous = index
